@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-a^4%y4t$m*jssnq1x%6412aygw-fk55g3@8$h*0h=r=)xrc(k!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "nicolelibraryapi.onrender.com"
+]
 
 
 # Application definition
