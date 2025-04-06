@@ -18,6 +18,7 @@ class Book(models.Model):
     author = models.CharField(max_length=100)
     published_date = models.DateField()
     available = models.BooleanField(default=True)
+    isbn = models.CharField(max_length=13, default='0000000000000')
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True, default=get_default_category)
 
     def __str__(self):

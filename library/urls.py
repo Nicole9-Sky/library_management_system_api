@@ -1,6 +1,8 @@
 from django.urls import path
 from .views import BookListCreate, BookRetrieveUpdateDestroy, checkout, return_book, CategoryListCreate, CategoryRetrieveUpdateDestroy, UserListCreate, TransactionList
 
+
+
 urlpatterns = [
     # Books
     path('books/', BookListCreate.as_view(), name='book-list-create'),

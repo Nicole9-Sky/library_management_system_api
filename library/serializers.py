@@ -6,16 +6,16 @@ from .models import Book, Category, User, Transaction
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = '__all__'
+        fields = ['id', 'name', 'description']	
 
 
 # Book Serializer (Updated to include Category)
 class BookSerializer(serializers.ModelSerializer):
-    category = CategorySerializer()
+    category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
 
     class Meta:
         model = Book
-        fields = '__all__'
+        fields = ['title', 'author', 'published_date', 'available', 'isbn', 'category']
 
 
 # User Serializer

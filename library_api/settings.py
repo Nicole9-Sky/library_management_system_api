@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-a^4%y4t$m*jssnq1x%6412aygw-fk55g3@8$h*0h=r=)xrc(k!
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '127.0.0.1', 'localhost',
     "nicolelibraryapi.onrender.com"
 ]
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles', 
     'rest_framework', 
+    'rest_framework.authtoken',
     'library',
 ]
 
@@ -70,6 +72,14 @@ TEMPLATES = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
 WSGI_APPLICATION = 'library_api.wsgi.application'
 
 
